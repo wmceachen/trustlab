@@ -1,3 +1,4 @@
+# AN EARLY ATTEMPT, CAN IGNORE
 import requests
 import re
 from warcio.archiveiterator import ArchiveIterator

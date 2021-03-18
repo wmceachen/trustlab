@@ -1,9 +1,11 @@
 import gzip
 BUCKET_BASE_PATH = 's3://commoncrawl/'
+HTTP_BASE_PATH = 'https://commoncrawl.s3.amazonaws.com/'
+
 def get_paths():   
     paths = []
     with gzip.open(f'wet.paths.gz') as f:
-        paths.extend(map(lambda p: BUCKET_BASE_PATH + p, f.read().decode("utf-8").splitlines()))
+        paths.extend(map(lambda p: HTTP_BASE_PATH + p, f.read().decode("utf-8").splitlines()))
     return paths
 
 ECON_WORDS = ['GDP',     
